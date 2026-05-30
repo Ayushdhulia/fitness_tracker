@@ -9,7 +9,7 @@ exports.chatWithAI = async (req, res) => {
     const { message } = req.body;
     
     // 1. Try OpenAI if selected and key exists
-    if (AI_PROVIDER === 'openai' && process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== 'sk-...') {
+    if (AI_PROVIDER === 'openai' && process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY.length > 10) {
       try {
         const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
         const response = await openai.chat.completions.create({
@@ -29,7 +29,7 @@ exports.chatWithAI = async (req, res) => {
     }
 
     // 2. Try Gemini as backup or primary
-    if (process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'AQ.Ab8RN6...') {
+    if (process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY.length > 10) {
       try {
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
         // Use gemini-2.0-flash which seems to be the one working with the user's key
