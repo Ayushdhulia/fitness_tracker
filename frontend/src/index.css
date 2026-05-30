@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: 37 99 235;
+    --secondary: 16 185 129;
+    --accent: 249 115 22;
+    --background: 2 6 23;
+  }
+}
+
+body {
+  @apply bg-[#030712] text-white antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white;
+  background-color: #030712;
+  /* Cleaner, deeper background with subtle depth */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(20, 184, 166, 0.1) 0px, transparent 50%);
+  min-height: 100vh;
+}
+
+/* Premium Pro Glass */
+.glass-pro {
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 shadow-2xl;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-pro:hover {
+  @apply bg-white/[0.06] border-white/20 -translate-y-1;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(59, 130, 246, 0.2);
+}
+
+/* Typography Mastery */
+.heading-pro {
+  @apply font-black tracking-tight leading-[0.9] text-white;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.text-pro-body {
+  @apply text-gray-300 font-medium leading-relaxed;
+}
+
+.text-gradient-blue {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600;
+}
+
+/* High-Impact Buttons */
+.btn-pro {
+  @apply relative px-8 py-4 rounded-xl font-black uppercase tracking-widest transition-all duration-300 active:scale-95 flex items-center justify-center overflow-hidden;
+}
+
+.btn-pro-primary {
+  @apply bg-white text-black hover:bg-blue-600 hover:text-white shadow-xl;
+}
+
+.btn-pro-blue {
+  @apply bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-900/40;
+}
+
+/* Custom Utilities */
+.glow-spot {
+  @apply absolute pointer-events-none rounded-full blur-[120px] opacity-20 animate-pulse;
+}
+
+/* Animations */
+@keyframes float-pro {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float-pro {
+  animation: float-pro 4s ease-in-out infinite;
+}
+
+@keyframes shimmer-pro {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer-bg {
+  @apply relative overflow-hidden;
+}
+
+.shimmer-bg::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  animation: shimmer-pro 2s infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-[#030712];
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-600 rounded-full hover:bg-blue-400;
+}

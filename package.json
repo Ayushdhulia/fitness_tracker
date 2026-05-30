@@ -1,0 +1,17 @@
+{
+  "name": "fitness-tracker",
+  "version": "1.0.0",
+  "description": "A realistic, highly attractive, and feature-rich fitness application designed to help you transform your body and health.",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^10.0.0"
+  }
+}
