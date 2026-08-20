@@ -42,7 +42,6 @@ A realistic, highly attractive, and feature-rich fitness application designed to
    ```
 2. Install dependencies:
    ```bash
-   npm install
    ```
 3. Start the development server:
    ```bash
