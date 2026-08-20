@@ -45,7 +45,6 @@ A realistic, highly attractive, and feature-rich fitness application designed to
    ```
 3. Start the development server:
    ```bash
-   npm run dev
    ```
 
 ## Design Philosophy
